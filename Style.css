@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    background-color:bisque; 
+   color:dimgrey; 
+   
+    
+    margin-top: 20pt;
+    margin-bottom: 20pt;
+    margin-left: 20pt;
+    margin-right: 20pt;
+} 
+
+
+
+h1 { 
+font-family: 'Times New Roman';
+    color:cornflowerblue; 
+font-size: 50px; 
+}  
+
+
+h2{ 
+
+font-family:Georgia;
+color:darkgreen;
+font-size: 20px;
+} 
+
+
+
+h3{
+
+font-family: Verdana;
+color:cadetblue;
+font-size: 15px;
+}
+
+
+a:link {
+    color:brown;
+    text-decoration: none;}
+    a:visited {
+    color: black;}
+    a:hover {
+    color:blanchedalmond;
+
+    text-decoration: underline;}
+    a:active {
+    color: darkcyan;} 
+
+A:link {text-decoration: underline; color: rgb(9, 12, 218)}
+A:visited {text-decoration: none; color: rgb(244, 135, 18);}
+A:active {text-decoration: underline overline}
+A:hover {font-size:20pt; font-weight:bold; color: rgb(255, 0, 225);}
+
+.table-container {display: flex;flex-direction: column;}
+.table-row {display: flex;}
+
+.link-cell,
+.description-cell {border: 1px solid #060606} 
+
+
+body,html{height:100%;}
+nav{
+background-color: #f79F79;
+position: absolute;
+width: 150px;
+height: 100%;
+}
+nav a{
+padding: 15px;
+display: block;
+font-size: 25pt;
+color: #58355E;
+}
+nav a:hover{
+color: #f1f1f1;
+}

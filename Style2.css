@@ -11,3 +11,25 @@ body {
     margin-right: 20pt;
 } 
 
+
+
+h1 { 
+font-family: 'Times New Roman';
+    color:cornflowerblue; 
+font-size: 25px; 
+} 
+
+
+h2{ 
+
+font-family:Georgia;
+color:darkgreen;
+font-size: 20px;
+} 
+
+h3{
+
+font-family: Verdana;
+color:cadetblue;
+font-size: 15px;
+}

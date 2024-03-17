@@ -15,21 +15,21 @@ body {
 
 h1 { 
 font-family: 'Times New Roman';
-    color:cornflowerblue; 
-font-size: 25px; 
+    color:black; 
+font-size: 50px; 
 } 
 
 
 h2{ 
 
 font-family:Georgia;
-color:darkgreen;
-font-size: 20px;
+color:Black;
+font-size: 30px;
 } 
 
 h3{
 
 font-family: Verdana;
-color:cadetblue;
-font-size: 15px;
+color:rgb(0, 119, 255);   
+font-size: 20px;
 }

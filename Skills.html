@@ -40,6 +40,7 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
+    
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -62,20 +63,28 @@ input[type=submit]:hover {
 </head>
 <body>
 
+
+    <!-- the above code sets the sizing and visual guides for this contact page. It sets the colour to white, gives sizing dimensions such as padding and border sizing--> 
+    
 <h3>Contact Form</h3>
 
 <div class="container">
   <form action="/action_page.php">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <!-- the above code askes the user for their first name -->
     
-    
-     <form action="/action_page.php">
-    <label for="Ename">Email Address</label>
-    <input type="text" id="Ename" name="Email address" placeholder="Your Email address..">
 
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <!-- the above code asks the user for their last name -->
+
+           <form action="/action_page.php">
+    <label for="Ename">Email Address</label>
+    <input type="text" id="Ename" name="Email address" placeholder="Your Email address..">
+
+               <!-- the above code asks the user for their email address-->
 
     <label for="Role">Role</label>
     <select id="country" name="country">
@@ -85,9 +94,12 @@ input[type=submit]:hover {
       <option value="Recuiter">Recuiter</option>
        <option value="Other">Other</option>
     </select>
-
+<!-- the above code asks the use to select a role. There are 5 options to pick from-->
+               
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+               <!-- the above code is for the blank area where the user can write out their message--> 
 
     <input type="submit" value="Submit">
   </form>

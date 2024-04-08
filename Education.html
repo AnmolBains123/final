@@ -32,7 +32,6 @@
 <h4> I plan on graduating this April. After graduating, I intend to continue my education by taking courses, boot camps, and getting certificates to excel in my career in cybersecurity. 
 </h4>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,23 +39,22 @@
 <style>
 * {box-sizing: border-box;}
 
-/* Styles for the container of the image and its magnifier */
 .img-zoom-container {
-  position: relative; /* Container needs to be positioned relative for absolute positioning of lens */
+  position: relative;
 }
 
-/* Styles for the magnifier lens */
 .img-zoom-lens {
-  position: absolute; /* Lens is absolutely positioned relative to the container */
-  border: 1px solid #d4d4d4; /* Border styling for the lens */
-  width: 40px; /* Set the size of the lens */
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
   height: 40px;
 }
 
-/* Styles for the result container that shows the magnified image */
 .img-zoom-result {
-  border: 1px solid #d4d4d4; /* Border styling for the result container */
-  width: 300px; /* Set the size of the result container */
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
   height: 300px;
 }
 </style>
@@ -65,72 +63,54 @@ function imageZoom(imgID, resultID) {
   var img, lens, result, cx, cy;
   img = document.getElementById(imgID);
   result = document.getElementById(resultID);
-  
-  /* Create lens element */
+  /*create lens:*/
   lens = document.createElement("DIV");
   lens.setAttribute("class", "img-zoom-lens");
-  
-  /* Insert lens before the image */
+  /*insert lens:*/
   img.parentElement.insertBefore(lens, img);
-  
-  /* Calculate the ratio between result DIV and lens */
+  /*calculate the ratio between result DIV and lens:*/
   cx = result.offsetWidth / lens.offsetWidth;
   cy = result.offsetHeight / lens.offsetHeight;
-  
-  /* Set background properties for the result DIV */
+  /*set background properties for the result DIV:*/
   result.style.backgroundImage = "url('" + img.src + "')";
   result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-  
-  /* Event listener for mousemove events on lens and image */
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
   lens.addEventListener("mousemove", moveLens);
   img.addEventListener("mousemove", moveLens);
-  
-  /* Event listener for touchmove events on lens and image for touch screens */
+  /*and also for touch screens:*/
   lens.addEventListener("touchmove", moveLens);
   img.addEventListener("touchmove", moveLens);
-  
-  /* Function to move the lens and show the magnified portion of the image */
   function moveLens(e) {
     var pos, x, y;
-    e.preventDefault(); /* Prevent any other actions that may occur when moving over the image */
-    
-    /* Get the cursor's x and y positions */
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
     pos = getCursorPos(e);
-    
-    /* Calculate the position of the lens */
+    /*calculate the position of the lens:*/
     x = pos.x - (lens.offsetWidth / 2);
     y = pos.y - (lens.offsetHeight / 2);
-    
-    /* Prevent the lens from being positioned outside the image */
+    /*prevent the lens from being positioned outside the image:*/
     if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
     if (x < 0) {x = 0;}
     if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
     if (y < 0) {y = 0;}
-    
-    /* Set the position of the lens */
+    /*set the position of the lens:*/
     lens.style.left = x + "px";
     lens.style.top = y + "px";
-    
-    /* Display what the lens "sees" */
+    /*display what the lens "sees":*/
     result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
   }
-  
-  /* Function to get cursor position relative to the image */
   function getCursorPos(e) {
     var a, x = 0, y = 0;
     e = e || window.event;
-    
-    /* Get the x and y positions of the image */
+    /*get the x and y positions of the image:*/
     a = img.getBoundingClientRect();
-    
-    /* Calculate the cursor's x and y coordinates, relative to the image */
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
     x = e.pageX - a.left;
     y = e.pageY - a.top;
-    
-    /* Consider any page scrolling */
+    /*consider any page scrolling:*/
     x = x - window.pageXOffset;
     y = y - window.pageYOffset;
-    
     return {x : x, y : y};
   }
 }
@@ -144,10 +124,8 @@ function imageZoom(imgID, resultID) {
 
 <div class="img-zoom-container">
   <div style="text-align: center;">
-    <!-- Image to be magnified -->
     <img id="myimage" src="TMU.jpeg" alt="A picture of the school I am currently attending">
   </div>
-  <!-- Result container to show magnified image -->
   <div id="myresult" class="img-zoom-result"></div>
 </div>
 
@@ -162,7 +140,3 @@ imageZoom("myimage", "myresult");
 
 </body>
 </html>
-
-</body>
-</html>
-
